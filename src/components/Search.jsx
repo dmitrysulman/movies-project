@@ -36,7 +36,7 @@ class Search extends Component {
                     Submit
                 </button>
             </div>
-            <p>
+            <div>
                 <label>
                     <input
                         className="with-gap"
@@ -70,7 +70,7 @@ class Search extends Component {
                     />
                     <span>Series</span>
                 </label>
-            </p>
+            </div>
         </div>
     }
 }
