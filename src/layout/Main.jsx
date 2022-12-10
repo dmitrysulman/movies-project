@@ -17,9 +17,13 @@ class Main extends Component {
 
     fetchMovies = (text, type) => {
         this.setState({ loading: true });
-        fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${text}&type=${type}`)
+        fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${text}&type=${type}`)
             .then(response => response.json())
-            .then(data => this.setState({ movies: data.Search, loading: false }));
+            .then(data => this.setState({ movies: data.Search, loading: false }))
+            .catch((err) => {
+                console.log(err);
+                this.setState({loading: false});
+            });
     }
 
     render() {
