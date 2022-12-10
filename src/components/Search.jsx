@@ -13,7 +13,10 @@ class Search extends Component {
     }
 
     handleRadiobuttonChange = (event) => {
-        this.setState({type: event.target.value});
+        this.setState(
+            () => ({ type: event.target.value }),
+            () => {this.props.searchCallBack(this.state.search, this.state.type)}
+        );
     }
 
     render() {
